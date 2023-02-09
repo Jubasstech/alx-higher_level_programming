@@ -1,15 +1,20 @@
 #!/usr/bin/python3
-"""
-file: 10-class_to_json.py
-functions:
--> class_to_json
-"""
+'''
+file: 11-student.py
+Classes:
+-> Student
+'''
 
 
-def class_to_json(obj):
-    """ retuns the dictionary description with simple data structure """
+class Student:
+    ''' Student class '''
 
-    structure = {}
-    if hasattr(obj, "__dict__"):
-        structure = obj.__dict__.copy()
-    return structure
+    def __init__(self, first_name, last_name, age):
+        ''' Constructor method '''
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self):
+        ''' Method that returns directory description '''
+        return self.__dict__.copy()
